@@ -1,0 +1,37 @@
+﻿@page
+
+@* Aqui modificamos el codigo HTML para tener la pantalla tipo chat *@
+
+
+<div class="container">
+    <div class="row p-1">
+        <div class="col-1">User</div>@* aqui va el nombre de usuario *@
+        <div class="col-5"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-1">Message</div>@* Aqui va el mensaje que sera enviado *@
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6 text-end">@* Aqui esta el boton para enviar el mensaje *@
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <hr />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            @* Aqui se muestra la lista de mensajes enviado y recibidos *@
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+@* Aqui agregamos la referencia de singla R del lado del cliente *@
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+@* este archivo hay que crearlo para manejar la interaccion 
+tanto con el cliente y el server *@
+<script src="~/chat.js"></script>
